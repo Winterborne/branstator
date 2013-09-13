@@ -5,15 +5,18 @@ var path = 'web';
 
 // Let's calculate some Fibonaccis.  A test of putting functions in the
 // server, and of Express.js's ability to extract routing params from the
-// request.
+// request. Not robust: very large values can theoretically tie up
+// lots of resources!
 
 var fibarray = new Array();
 fibarray[0] = 1;
 fibarray[1] = 1;
 
 function fib(index) {
-	if ((index == 0) || (index == 1)) {
-		return 1;
+	// Already had to calculate this value? Just retrieve it rather than 
+	// recalculating.	
+	if (fibarray[index] > -1) {
+		return fibarray[index];
 	}
 
 	for (i = 2; i <= index; i++) {
@@ -26,7 +29,11 @@ function fib(index) {
 app.use(express.logger());
 
 app.get('/fib/:id', function(req, res) {
-	res.send("Fibonacci: " + fib(req.params.id));
+	var time1 = process.hrtime();
+	var number = fib(req.params.id);
+	var time2 = process.hrtime();
+	var diff = time2[1] - time1[1];
+	res.send("Fibonacci: " + number + "<br/>Nanoseconds: " + diff);
 });
 
 app.use(express.static(path));
