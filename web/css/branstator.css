@@ -1,0 +1,105 @@
+@-moz-keyframes clockwise {
+	from { -moz-transform: rotate(0deg); }
+	to   { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes clockwise {
+	from { -webkit-transform: rotate(0deg); }
+	to   { -webkit-transform: rotate(360deg); }
+}
+@-ms-keyframes clockwise {
+	from { -ms-transform: rotate(0deg); }
+	to   { -ms-transform: rotate(360deg); }
+}
+@keyframes clockwise {
+	from { transform: rotate(0deg); }
+	to   { transform: rotate(360deg); }
+}
+
+@-moz-keyframes counterclockwise {
+	from { -moz-transform: rotate(360deg); }
+	to   { -moz-transform: rotate(0deg); }
+}
+@-webkit-keyframes counterclockwise {
+	from { -webkit-transform: rotate(360deg); }
+	to   { -webkit-transform: rotate(0deg); }
+}
+@-ms-keyframes counterclockwise {
+	from { -ms-transform: rotate(360deg); }
+	to   { -ms-transform: rotate(0deg); }
+}
+@keyframes counterclockwise {
+	from { transform: rotate(360deg); }
+	to   { transform: rotate(0deg); }
+}
+
+.clockwise {
+  -moz-animation-name:             clockwise; 
+  -moz-animation-duration:         20s; 
+  -moz-animation-iteration-count:  infinite;
+  -moz-animation-timing-function: linear;
+  -webkit-animation-name:             clockwise; 
+  -webkit-animation-duration:         20s; 
+  -webkit-animation-iteration-count:  infinite;
+  -webkit-animation-timing-function: linear;
+  -ms-animation-name:             clockwise; 
+  -ms-animation-duration:         20s; 
+  -ms-animation-iteration-count:  infinite;
+  -ms-animation-timing-function: linear;
+  animation-name:             clockwise; 
+  animation-duration:         20s; 
+  animation-iteration-count:  infinite;
+  animation-timing-function: linear;
+}
+
+.counterclockwise {
+  -moz-animation-name:             counterclockwise; 
+  -moz-animation-duration:         20s; 
+  -moz-animation-iteration-count:  infinite;
+  -moz-animation-timing-function: linear;
+  -webkit-animation-name:             counterclockwise; 
+  -webkit-animation-duration:         20s; 
+  -webkit-animation-iteration-count:  infinite;
+  -webkit-animation-timing-function: linear;
+  -ms-animation-name:             counterclockwise; 
+  -ms-animation-duration:         20s; 
+  -ms-animation-iteration-count:  infinite;
+  -ms-animation-timing-function: linear;
+  animation-name:             counterclockwise; 
+  animation-duration:         20s; 
+  animation-iteration-count:  infinite;
+  animation-timing-function: linear;
+}
+
+#nick {
+	height:150px;
+	width:150px;
+	-moz-box-shadow: 2px 2px 7px #442;
+	-webkit-box-shadow: 2px 2px 7px #442;
+	box-shadow: 2px 2px 7px #442;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#000000');
+}
+
+.jumbotron {
+	z-index: -2;
+	position:relative;
+	background-color:#aaaacc;
+}
+
+.categories {
+	background-color:#ccccee;
+	z-index:2;
+	position:relative;
+}
+
+body { background-color: #ddddff; }
+
+.gear {
+	z-index:-1;
+	opacity:0.04;
+	font-size:500px;
+	position:absolute; 
+	font-color:#444422;
+}
